@@ -97,3 +97,47 @@ img { image-rendering: auto; }
 .page-panel{margin-top:42px}
 .page-panel ul{margin-bottom:26px}
 .page-panel .btn-primary{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;position:relative;clear:both}
+
+/* Mobile fix: make the Solana showcase a native swipeable carousel. */
+@media (max-width: 700px) {
+  .promo-showcase { overflow: hidden; }
+  .promo-marquee {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 8px 0 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .promo-marquee::-webkit-scrollbar { display: none; }
+  .promo-track {
+    width: max-content;
+    gap: 14px;
+    padding: 0 7vw;
+    animation: none !important;
+    transform: none;
+    will-change: auto;
+  }
+  .promo-card {
+    flex: 0 0 min(86vw, 430px);
+    width: min(86vw, 430px);
+    aspect-ratio: 1496 / 1051;
+    scroll-snap-align: center;
+    transform: none;
+  }
+  .promo-card:hover { transform: none; }
+  .promo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Prevent long showcase content from creating page-level horizontal overflow. */
+.promo-showcase, .promo-heading, .promo-caption { min-width: 0; }
