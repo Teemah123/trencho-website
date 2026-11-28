@@ -141,3 +141,10 @@ img { image-rendering: auto; }
 
 /* Prevent long showcase content from creating page-level horizontal overflow. */
 .promo-showcase, .promo-heading, .promo-caption { min-width: 0; }
+ .text-arrow {
+    font-family: Arial, sans-serif;
+    font-variant-emoji: text;
+    font-size: 0.9em;
+    color: inherit;
+    display: inline-block;
+ }
